@@ -12,7 +12,12 @@ app.use(fileUpload({
     useTempFiles:true
 }));
 
-app.use(cors())
+const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000'; // Temporary
+
+app.use(cors({
+  origin: frontendUrl,
+  credentials: true
+}));
 
 const PORT = process.env.PORT || 5000;
 
