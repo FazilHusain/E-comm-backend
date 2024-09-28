@@ -31,8 +31,6 @@ const userCtrl = {
 
       res.cookie("refreshtoken", refreshtoken, {
         httpOnly: true, // So it's not accessible from JavaScript
-        secure: process.env.NODE_ENV === "production", // true in production (HTTPS)
-        sameSite: "None", // Allows cross-origin requests
         path: "/user/refresh_token",
       });
 
@@ -71,8 +69,6 @@ const userCtrl = {
 
       res.cookie("refreshtoken", refreshtoken, {
         httpOnly: true, // So it's not accessible from JavaScript
-        secure: process.env.NODE_ENV === "production", // true in production (HTTPS)
-        sameSite: "None", // Allows cross-origin requests
         path: "/user/refresh_token",
       });
       res.json({ accesstoken });
